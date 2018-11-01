@@ -1,0 +1,117 @@
+@keyframes movement {
+  from {background-color:red;}
+    to {background-color: blue;}
+}
+
+@keyframes stash {
+  0%{
+    position: fixed;
+    top: 150;
+    left: 0;
+    color: blue;
+  }
+  25%{
+    position: fixed;
+    top: 150;
+    left: 50%;
+  }
+  50%{
+    position: fixed;
+    top: 150;
+    right: 0;
+  }
+  75%{
+    position: fixed;
+    top:150;
+    left: 50%;
+  }
+  100%{
+    position: fixed;
+    top: 150;
+    left:0;
+    color: red;
+  }
+
+}
+
+.animation{
+  animation-name: movement;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  height: 150px;
+  width: 150px;
+  background-color: steelblue;
+}
+.moustache {
+  animation-name: stash;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  width: 180px;
+  height: 180px;
+  /* background-color: black; */
+  position: absolute;
+  top: 150px;
+  left: 130px;
+  box-shadow:
+   150px 240px 0 0 currentcolor,
+   300px 240px 0 0 currentcolor;
+  border-radius: 50%;
+
+}
+
+.moustache::before{
+  width: 180px;
+  height: 180px;
+  content:"";/* set to empty string to show*/
+  /* background-color: red; */
+  position: absolute;
+  border-bottom: 180px solid currentcolor;
+border-radius: 0 0 0 100%;
+transform: rotate(-60deg);
+top:85px;
+left: 30px;
+transform-origin: right 210px;
+
+}
+.moustache::after{
+  width: 180px;
+  height: 180px;
+  content:"";/* set to empty string to show*/
+  /* background-color: red; */
+  position: absolute;
+  border-bottom: 180px solid currentcolor;
+border-radius: 0 0 100% 0;
+transform: rotate(60deg);
+top:85px;
+left: 410px;
+transform-origin: left 210px;
+
+}
+.eyes{
+  width: 130px;
+  height: 130px;
+  /* background-color: black; */
+  position: absolute;
+  top: 0px;
+  left: 155px;
+  box-shadow:
+   150px 240px 0 0 black,
+   300px 240px 0 0 black;
+  border-radius: 50%;
+
+}
+
+
+.eyes:{
+  width: 80px;
+  height: 80px;
+  content:"";/* set to empty string to show*/
+  /* background-color: red; */
+  position: absolute;
+  border-bottom: 180px solid black;
+border-radius: 0 0 0 0;
+transform: rotate(60deg);
+top:85px;
+left: 410px;
+transform-origin: left 210px;
+}
